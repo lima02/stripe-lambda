@@ -43,7 +43,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('run', ['build_event','lambda_invoke']);
 
-  grunt.registerTask('package', ['run', 'build_event', 'lambda_package']);
+  //grunt.registerTask('package', ['run', 'build_event', 'lambda_package']);
+  grunt.registerTask('package', ['lambda_package']);
 
   grunt.registerTask('deploy', ['run', 'build_event', 'lambda_package', 'lambda_deploy']);
 

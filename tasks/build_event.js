@@ -14,12 +14,13 @@ module.exports = function(grunt) {
       "exp_year": 2017,
       "cvc": "123"
     },function(err, token){
-      fs.writeFile("event.json", JSON.stringify({
+      console.log(JSON.stringify(token));
+      fs.writeFile("event.json", JSON.stringify({"body": {
           "source" : token,
-          "amount" : 2000,
-          "currency" : "usd",
-          "description" : "test description",
-          "receipt_email" : process.env.RECEIPT_EMAIL
+          "amount" : 50,
+          "currency" : "aud",
+          "description" : "test description"
+        }
       }, null, 4) , 'utf8', function(err){
         done();
       });
